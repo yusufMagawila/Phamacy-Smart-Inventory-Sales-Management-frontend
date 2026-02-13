@@ -13,8 +13,8 @@ import { blue, red } from '@mui/material/colors';
 import axios from 'axios';
 
 // IMPORTANT: Replace with your actual backend base URL
-const API_BASE_URL = import.meta.env.BACKEND_URL; 
-const LOGIN_ENDPOINT = `${API_BASE_URL}/auth/login`; 
+const API_BASE_URL =import.meta.env.BACKEND_URL; 
+const LOGIN_ENDPOINT = `${API_BASE_URL}/api/auth/login`; 
 
 // Custom styled component for the Login Box
 const LoginContainer = styled(Paper)(({ theme }) => ({
