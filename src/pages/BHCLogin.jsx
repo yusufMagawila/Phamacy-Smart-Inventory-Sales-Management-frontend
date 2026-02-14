@@ -11,7 +11,7 @@ import {
 import { styled } from '@mui/material/styles';
 import { blue, red } from '@mui/material/colors';
 import axios from 'axios';
-
+    
 // IMPORTANT: Replace with your actual backend base URL
 const API_BASE_URL =import.meta.env.VITE_BACKEND_URL; 
 const LOGIN_ENDPOINT = `${API_BASE_URL}/api/auth/login`; 
@@ -103,7 +103,7 @@ const BHCLogin = ({ useAuthProp }) => {
             <LoginContainer component="form" onSubmit={handleLogin}>
                 <LocalPharmacy sx={{ fontSize: 60, color: blue[600], mb: 1 }} />
                 <Typography variant="h4" component="h1" gutterBottom align="center" color="primary">
-                    BHC Pharmacy Login
+                    Mahonda Pharmacy Login
                 </Typography>
                 <Typography variant="subtitle1" color="text.secondary" mb={3} align="center">
                     Enter your credentials to access the dashboard.
