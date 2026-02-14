@@ -24,7 +24,7 @@ const ActivityLogViewer = () => {
             const token = localStorage.getItem('token');
             
             const response = await axios.get(
-                `${API_BASE_URL}/admin/activity-log`,
+                `${API_BASE_URL}/api/admin/activity-log`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`, // Pass the Admin's token
