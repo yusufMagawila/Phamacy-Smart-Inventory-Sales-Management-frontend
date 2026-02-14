@@ -202,7 +202,7 @@ const BHCPharmacyDashboard = ({ useAuthProp }) => {
         setLoading(true);
         const token = localStorage.getItem('token');
         try {
-            const response = await axios.get(`${API_BASE_URL}/pharmacy/inventory`, {
+            const response = await axios.get(`${API_BASE_URL}/api/pharmacy/inventory`, {
                 headers: { Authorization: `Bearer ${token}` },
                 params: { search }
             });
@@ -235,7 +235,7 @@ const BHCPharmacyDashboard = ({ useAuthProp }) => {
 
     try {
         const response = await axios.get(
-            `${API_BASE_URL}/pharmacy/dashboard/summary`,
+            `${API_BASE_URL}/api/pharmacy/dashboard/summary`,
             {
                 headers: { Authorization: `Bearer ${token}` }
             }
@@ -259,7 +259,7 @@ const BHCPharmacyDashboard = ({ useAuthProp }) => {
         setLoading(true);
         const token = localStorage.getItem('token');
         try {
-            const response = await axios.get(`${API_BASE_URL}/pharmacy/sales/history`, {
+            const response = await axios.get(`${API_BASE_URL}/api/pharmacy/sales/history`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             const sales = response.data || [];
@@ -283,7 +283,7 @@ const BHCPharmacyDashboard = ({ useAuthProp }) => {
         setLoadingUsers(true);
         const token = localStorage.getItem('token');
         try {
-            const response = await axios.get(`${API_BASE_URL}/admin/users`, { // 💡 ASSUMED USER API ENDPOINT
+            const response = await axios.get(`${API_BASE_URL}/api/admin/users`, { // 💡 ASSUMED USER API ENDPOINT
                 headers: { Authorization: `Bearer ${token}` }
             });
             setUsers(response.data || []);
@@ -341,14 +341,14 @@ const BHCPharmacyDashboard = ({ useAuthProp }) => {
         
         try {
             if (type === 'medicine') {
-                await axios.delete(`${API_BASE_URL}/pharmacy/inventory/${id}`, {
+                await axios.delete(`${API_BASE_URL}/api/pharmacy/inventory/${id}`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 handleRefresh();
                 setSnackbar({ open: true, message: `${name} deleted successfully.`, severity: 'success' });
 
             } else if (type === 'user') {
-                await axios.delete(`${API_BASE_URL}/admin/users/${id}`, { // 💡 ASSUMED USER DELETE ENDPOINT
+                await axios.delete(`${API_BASE_URL}/api/admin/users/${id}`, { // 💡 ASSUMED USER DELETE ENDPOINT
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 fetchUsers();
