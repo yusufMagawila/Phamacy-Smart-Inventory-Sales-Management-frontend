@@ -3,7 +3,7 @@
 /**
  * This should point to your Express server's root.
  */
-export const API_BASE_URL = import.meta.env.VITE_BACKEND_URL;
+export const API_BASE_URL = import.meta.env.VITE_BACKEND_URL/api;
 /**
  * Formats a date object or string into the required YYYY-MM-DD format for HTML input type="date".
  */
